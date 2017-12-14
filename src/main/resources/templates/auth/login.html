@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teszt app login</title>
+</head>
+<body>
+
+
+		<form name="login" th:action="@{/login}" method="post" class="form-signin">
+			<h2>Kérlek jelentkezz be</h2>
+			<div id="err" th:if="${param.error}" class="alert alert-danger">Hibás felhasználói név és jelszó</div>
+			<div th:if="${param.logout}" class="alert alert-success">Sikeresen kijelentkeztél</div>
+			<label for="username">Felhasználói név</label> 
+			    <input type="text" id="username" name="username" class="form-control" placeholder="Felhasználói név" required="true" /> 
+			<label for="password" >Jelszó</label> 
+			    <input type="password" id="password" name="password" placeholder="Jelszó" required="true" />
+		
+			<button type="submit">Bejelentkezés</button>
+		</form>
+
+
+
+</body>
+</html>
